@@ -3,7 +3,10 @@
 
 ### C# för ML 
 
-En konsolapplikation som kommunicerar med en ML-applikation. Denna är skriven i C# och fungerar som ett gränssnitt mot en ML-applikation så med hjälp av Machine Learning kan avgöra om ett inmatat omdöme är positivt eller negativt.
+En konsolapplikation som kommunicerar med en ML-applikation. 
+<br>
+Denna är skriven i C# och fungerar som ett gränssnitt mot en ML-applikation så med hjälp av Machine Learning kan avgöra om ett inmatat omdöme är positivt eller negativt.
+<br>
 <br>
 Applikationen innehar ett enklare menysystem med följande val: 
 
