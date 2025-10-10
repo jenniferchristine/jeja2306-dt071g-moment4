@@ -9,7 +9,7 @@ Denna är skriven i C# och fungerar som ett gränssnitt mot en ML-applikation s�
 <br>
 <br>
 Applikationen innehar ett enklare menysystem med följande val: 
-
- <br>
+<br>
 - Valfri tangent ) Mata in nytt omdöme
+<br>
 - X ) Avsluta programmet
