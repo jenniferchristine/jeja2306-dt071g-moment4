@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* En konsolapplikation som kommunicerar med en ML-applikation skapad av Jennifer Jakobsson */
+
+using System;
 using ReviewClassifier.Services;
 
 namespace ReviewClassifier

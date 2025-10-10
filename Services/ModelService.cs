@@ -15,7 +15,7 @@ namespace ReviewClassifier.Services
             var mlContext = new MLContext();
             var model = mlContext.Model.Load(ModelPath, out var schema);
 
-            // Försök att skapa prediction engine om modellen finns
+            // försök att skapa prediction engine om modellen finns
             if (model != null)
             {
                 predEngine = mlContext.Model.CreatePredictionEngine<ReviewInput, ReviewPrediction>(model);
