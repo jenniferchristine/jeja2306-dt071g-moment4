@@ -29,6 +29,11 @@ namespace ReviewClassifier.Services
 
         public static string ClassifyReview(string reviewText) // metod som tar en recension som parameter och returnerar en predictad label
         {
+            if (predEngine == null)
+            {
+                return "Model not loaded";
+            }
+            
             try
             {
                 var input = new ReviewInput { Review = reviewText };
