@@ -8,7 +8,7 @@ class TrainModel
     {
         var mlContext = new MLContext();
 
-        // Ladda data
+        // laddar data
         IDataView dataView = mlContext.Data.LoadFromTextFile<ReviewData>("Data/reviews.csv", hasHeader: true, separatorChar: ',');
 
         Console.WriteLine("Schema:");
@@ -17,23 +17,23 @@ class TrainModel
             Console.WriteLine($"Column: {column.Name}, Type: {column.Type}");
         }
 
-        // Bygg en pipeline
+        // bygger en pipeline
         var pipeline = mlContext.Transforms.Text.NormalizeText("NormalizedReview", nameof(ReviewData.Review))
             .Append(mlContext.Transforms.Text.FeaturizeText("Features", "NormalizedReview"))
             .Append(mlContext.Transforms.Conversion.MapValueToKey(nameof(ReviewData.Label))) 
             .Append(mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(nameof(ReviewData.Label), "Features"))
             .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
 
-        // Träna modellen
+        // tränar modellen
         var model = pipeline.Fit(dataView);
         Console.WriteLine("Model trained successfully");
 
-        // Spara modellen
+        // sparar modellen
         mlContext.Model.Save(model, dataView.Schema, "Models/reviewModel.zip");
         Console.WriteLine("Model is saved");
     }
 
-    public class ReviewData
+    public class ReviewData // klass för datan i reviews-filen
     {
         [LoadColumn(0)]
         public string? Review { get; set; }
