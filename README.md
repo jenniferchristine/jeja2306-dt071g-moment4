@@ -11,5 +11,4 @@ Denna är skriven i C# och fungerar som ett gränssnitt mot en ML-applikation s�
 Applikationen innehar ett enklare menysystem med följande val: 
 <br>
 - Valfri tangent ) Mata in nytt omdöme
-<br>
 - X ) Avsluta programmet
